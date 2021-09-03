@@ -18,6 +18,7 @@ export class AddTaskComponent implements OnInit {
   }
 
   onSubmit(): boolean {
+    // Do not use Task type here, since this forces us to use an id. We don't want to add an id, since this is auto-generated.
     this.tasksCollection.add({
       name: this.itemName
     });

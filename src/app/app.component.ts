@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import {Observable} from 'rxjs';
-import {AngularFirestore} from '@angular/fire/firestore';
+import {AngularFirestore, AngularFirestoreCollection} from '@angular/fire/firestore';
+import { Task } from './types/task';
 
 @Component({
   selector: 'app-root',
@@ -8,10 +9,14 @@ import {AngularFirestore} from '@angular/fire/firestore';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  items: Observable<any[]>;
+  tasksCollection: AngularFirestoreCollection<Task>;
+  items: Observable<Task[]>;
   constructor(firestore: AngularFirestore) {
-    this.items = firestore.collection('items').valueChanges();
+    this.tasksCollection = firestore.collection<Task>('items');
+    this.items = this.tasksCollection.valueChanges({idField: 'id'});
   }
 
-
+  delete(id: string): void {
+    this.tasksCollection.doc(id).delete();
+  }
 }

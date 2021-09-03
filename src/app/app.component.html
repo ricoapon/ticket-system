@@ -6,9 +6,19 @@
           <h4 class="card-title">Awesome Todo list</h4>
           <app-add-task></app-add-task>
           <div class="pt-3">
-            <ul class="list-group">
-              <li class="list-group-item" *ngFor="let item of items | async">{{item.name}}</li>
-            </ul>
+
+            <div class="card" *ngFor="let item of items | async">
+              <div class="card-body">
+                <div class="justify-content-between d-flex align-items-center">
+                  <p class="p-0 m-0">{{item.name}}</p>
+                  <div class="d-flex align-items-center">
+                    <button (click)="delete(item.id)" class="btn btn-danger ms-2">
+                      <i class="fas fa-trash-alt"></i>
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
       </div>
