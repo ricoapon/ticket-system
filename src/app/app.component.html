@@ -4,10 +4,7 @@
       <div class="card px-3">
         <div class="card-body">
           <h4 class="card-title">Awesome Todo list</h4>
-          <div class="d-flex"><input type="text" class="form-control"
-                                     placeholder="What do you need to do today?">
-            <button class="btn btn-primary">Add</button>
-          </div>
+          <app-add-task></app-add-task>
           <div class="pt-3">
             <ul class="list-group">
               <li class="list-group-item" *ngFor="let item of items | async">{{item.name}}</li>
