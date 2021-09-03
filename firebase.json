@@ -19,20 +19,6 @@
   },
   "hosting": [
     {
-      "public": "dist/ticket-system",
-      "ignore": [
-        "firebase.json",
-        "**/.*",
-        "**/node_modules/**"
-      ],
-      "rewrites": [
-        {
-          "source": "**",
-          "destination": "/index.html"
-        }
-      ]
-    },
-    {
       "target": "ticket-system",
       "public": "dist/ticket-system",
       "ignore": [
