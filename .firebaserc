@@ -1,5 +1,14 @@
 {
   "projects": {
     "default": "ticket-system-f5428"
+  },
+  "targets": {
+    "ticket-system-f5428": {
+      "hosting": {
+        "ticket-system": [
+          "ticket-system-f5428"
+        ]
+      }
+    }
   }
 }
