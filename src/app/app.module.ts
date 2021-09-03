@@ -7,6 +7,7 @@ import {environment} from '../environments/environment';
 import {AngularFirestoreModule} from '@angular/fire/firestore';
 import {FormsModule} from '@angular/forms';
 import { AddTaskComponent } from './add-task/add-task.component';
+import {AngularFireAnalyticsModule} from '@angular/fire/analytics';
 
 @NgModule({
   declarations: [
@@ -17,6 +18,7 @@ import { AddTaskComponent } from './add-task/add-task.component';
     BrowserModule,
     AngularFireModule.initializeApp(environment.firebase),
     AngularFirestoreModule,
+    AngularFireAnalyticsModule,
     FormsModule
   ],
   providers: [],
